@@ -1,8 +1,8 @@
 # Homework 07 - Submission
 
 
-* Student: YOUR NAME
-* Semester: SEMESTER
+* Student: Melanie Lochrie
+* Semester: Fall 2025
 * Link / URL to your github repo for this assignment: 
   
 Don't forget the above link. TAs will grade by going to your repo!
