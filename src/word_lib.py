@@ -27,8 +27,11 @@ def is_palindrome(word: str) -> bool:
     Returns:
         bool: True if the word is a palindrome, False otherwise
     """
-    pass
-
+    if len(word) <= 1:
+        return True
+    if word[0] != word[-1]:
+        return False
+    return is_palindrome(word[1: -1])
 
 def count_vowels(word: str) -> int:
     """
@@ -49,8 +52,13 @@ def count_vowels(word: str) -> int:
     Returns:
         int: the number of vowels in the word
     """
-    pass
-
+    vowels = "aeiou"
+    if word == "":
+        return 0
+    if word[0].lower() in vowels:
+        return 1 + count_vowels(word[1:])
+    else:
+        return count_vowels(word[1:])
 
 def clean_word(word: str) -> str:
     """
