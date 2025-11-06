@@ -80,7 +80,12 @@ def clean_word(word: str) -> str:
     Returns:
         str: the word without punctuation
     """
-    pass
+    if word == "":
+        return ""
+    if word[0].isalnum(): #checks if all the characters in a string are letters or numbers
+        return word[0].lower() + clean_word(word[1:])
+    else:
+        return clean_word(word[1:])
 
 
 # Just running this file will run the doctests
