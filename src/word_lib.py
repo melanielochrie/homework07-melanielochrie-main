@@ -2,7 +2,7 @@
 Homework 07: Library of Word Functions, all written recursively
 ===========================
 Course:   CS 5001
-Student:  SOLUTION
+Student:  Melanie Lochrie
 
 Various functions to practice recursion.
 """
