@@ -3,7 +3,7 @@
 
 * Student: Melanie Lochrie
 * Semester: Fall 2025
-* Link / URL to your github repo for this assignment: 
+* Link / URL to your github repo for this assignment: https://github.com/melanielochrie/homework07-melanielochrie-main.git
   
 Don't forget the above link. TAs will grade by going to your repo!
 

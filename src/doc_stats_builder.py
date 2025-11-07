@@ -2,7 +2,7 @@
 Homework 07: Document Statistics Builder
 ===========================
 Course:   CS 5001
-Student:  STUDENT NAME
+Student:  Melanie Lochrie
 
 Functions for reading document stats. They all assume a 'document' is
 a tuple or list of strings, where each string is a line of the document.
@@ -38,8 +38,6 @@ def get_number_lines(lines: tuple) -> int:
     Returns:
         int: the number of lines in the document
     """
-    pass
-
 
 
 def get_number_words(lines: tuple) -> int:
@@ -60,7 +58,7 @@ def get_number_words(lines: tuple) -> int:
     Returns:
         int: the number of words in the document
     """
-    pass
+    # base case: no more words
 
 
 def get_vowel_count(lines: tuple) -> int:
@@ -80,7 +78,13 @@ def get_vowel_count(lines: tuple) -> int:
     Returns:
         int: the number of vowels in the document
     """
-    pass
+    vowels = "aeiouAEIOU"
+    count = 0
+    for line in lines:
+        for letter in line:
+            if letter in vowels:
+                count += 1
+    return count
 
 
 def get_word_palindromes(lines: tuple) -> int:
@@ -129,7 +133,7 @@ def get_sentence_palindromes(lines: tuple) -> int:
     pass
 
 
-# just running the file will automatically run doctest 
+# just running the file will automatically run doctest
 if __name__ == "__main__":  # if doctest is not installed, comment out these lines
     import doctest
 
