@@ -6,13 +6,20 @@
 def factorial(n):
     return n * factorial(n-1)
 ```
+The error value shows: "RecursionError: maximum recursion depth exceeded".
+
 2. Describe a base case in your own words. What is the base case needed for the code above?
+A base case is what ends the recursion. It tells the program to stop calling itself when it reaches a simple situation. The base case needed for the code above is: 
+```
+if n ==1:
+    return 1
+```
    
 3. Thinking about for-in loops, they all work on sequential data, so based on that, what is each "item" for each of these sequential data types. Separate each item by a comma after the => symbol. 
     * Example: range(1, 3) => 1, 2
-    * ('aloha', 'world') => 
-    * ['aloha', 'world'] =>
-    * 'aloha world' =>
+    * ('aloha', 'world') => aloha, world
+    * ['aloha', 'world'] => aloha, world
+    * 'aloha world' => a, l, o, h, a,  , w, o, r, l, d
 
 4. For this for-in loop, write an equivalent while loop. 
 ```python
@@ -20,8 +27,10 @@ for i in range(1, 10, 2):
     print(i)
 ```
 ```python
-# your code here
-
+i = 1
+while i < 10:
+    print(i)
+    i += 2
 ```
 
 ## Deeper Thinking
@@ -36,12 +45,16 @@ For this deeper thinking, you will work on an experiment. Write a recursive fibo
 import time
 
 def fibonacci_iterative(n):
-    # your code here
-    pass
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
 
 def fibonacci_recursive(n):
-    # your code here
-    pass
+    if n < 2:
+        return n
+    else:
+        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
 
 
 def time_function(func, *args):
@@ -73,6 +86,14 @@ if __name__ == "__main__":
 
 Report on your results here:
 
+Fibonacci(10) = (55, 1.9073486328125e-06)
+Fibonacci(20) = (6765, 2.1457672119140625e-06)
+Fibonacci(30) = (832040, 9.5367431640625e-07)
+Fibonacci(10) = (55, 7.152557373046875e-06)
+Fibonacci(20) = (6765, 0.0005440711975097656)
+Fibonacci(30) = (832040, 0.06075000762939453)
 
 
 Which one takes longer? Why do you think that is? 
+
+The iterative Fibonacci function is much faster than the recursive one. As n increases, the recursive version slows down dramatically because it repeats the same calculations many times. The iterative version only loops once through the numbers, so it finishes almost instantly. 
