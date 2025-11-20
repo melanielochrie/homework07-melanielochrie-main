@@ -38,6 +38,7 @@ def get_number_lines(lines: tuple) -> int:
     Returns:
         int: the number of lines in the document
     """
+    return len(lines)
 
 
 def get_number_words(lines: tuple) -> int:
@@ -58,8 +59,15 @@ def get_number_words(lines: tuple) -> int:
     Returns:
         int: the number of words in the document
     """
-    # base case: no more words
-
+    count = 0
+    for word in lines:
+        cleaned = "" #keep only letters or numbers, lowercase
+        for char in word:
+            if char.isalnum(): #keeps only letters or digits
+                cleaned += char.lower()
+        if cleaned != "": #only count if cleaned word is not empty
+            count += 1
+    return count
 
 def get_vowel_count(lines: tuple) -> int:
     """
