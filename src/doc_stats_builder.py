@@ -64,7 +64,7 @@ def get_number_words(lines: tuple) -> int:
         cleaned = "" #keep only letters or numbers, lowercase
         for char in word:
             if char.isalnum(): #keeps only letters or digits
-                cleaned += char.lower()
+                cleaned += char.lower() #converts letters to lowercase
         if cleaned != "": #only count if cleaned word is not empty
             count += 1
     return count
@@ -115,7 +115,15 @@ def get_word_palindromes(lines: tuple) -> int:
     Returns:
         int: the number of palindromes in the document
     """
-    pass
+    count = 0
+    for line in lines:
+        clean = ""
+        for char in line:
+            if char.isalpha(): #keeps only letters
+                clean += char.lower() #lowercaseletter
+        if clean != "" and clean == clean[::-1]:
+            count += 1
+    return count
 
 
 def get_sentence_palindromes(lines: tuple) -> int:
@@ -138,8 +146,19 @@ def get_sentence_palindromes(lines: tuple) -> int:
     Returns:
         int: the number of palindromes in the document
     """
-    pass
+    count = 0
 
+    for line in lines:
+        word = ""
+
+        for char in line:
+            if char.isalpha():
+                word += char.lower()
+
+        if word != "" and word == word[::-1]:
+            count += 1
+            
+    return count
 
 # just running the file will automatically run doctest
 if __name__ == "__main__":  # if doctest is not installed, comment out these lines

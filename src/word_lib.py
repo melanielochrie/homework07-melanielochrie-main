@@ -55,7 +55,7 @@ def count_vowels(word: str) -> int:
     vowels = "aeiou"
     if word == "":
         return 0
-    if word[0].lower() in vowels:
+    if word[0].lower() in vowels: 
         return 1 + count_vowels(word[1:])
     else:
         return count_vowels(word[1:])
