@@ -63,12 +63,9 @@ def get_number_words(lines: tuple) -> int:
     for line in lines:
         words = line.split()  # split the line into individual words
         for word in words:
-            cleaned = ""  # keep only letters or numbers, lowercase
-            for char in word:
-                if char.isalnum():  # keeps only letters or digits
-                    cleaned += char.lower()  # converts letters to lowercase
-        if cleaned != "":  # only count if cleaned word is not empty
-            count += 1
+            cleaned = clean_word(word)
+            if cleaned != "":
+                count += 1
     return count
 
 
@@ -120,12 +117,11 @@ def get_word_palindromes(lines: tuple) -> int:
     """
     count = 0
     for line in lines:
-        clean = ""
-        for char in line:
-            if char.isalpha():  # keeps only letters
-                clean += char.lower()  # lowercaseletter
-        if clean != "" and clean == clean[::-1]:
-            count += 1
+        words = line.split()
+        for word in words:
+            cleaned = clean_word(word)
+            if cleaned != "" and is_palindrome(cleaned):
+                count += 1
     return count
 
 
@@ -152,15 +148,9 @@ def get_sentence_palindromes(lines: tuple) -> int:
     count = 0
 
     for line in lines:
-        word = ""
-
-        for char in line:
-            if char.isalpha():
-                word += char.lower()
-
-        if word != "" and word == word[::-1]:
+        cleaned = clean_word(line)
+        if cleaned != "" and is_palindrome(cleaned):
             count += 1
-
     return count
 
 
