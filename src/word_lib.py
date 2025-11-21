@@ -33,6 +33,7 @@ def is_palindrome(word: str) -> bool:
         return False
     return is_palindrome(word[1: -1])
 
+
 def count_vowels(word: str) -> int:
     """
     Recursively counts the number of vowels in a string. Case
@@ -60,6 +61,7 @@ def count_vowels(word: str) -> int:
     else:
         return count_vowels(word[1:])
 
+
 def clean_word(word: str) -> str:
     """
     Recursively removes punctuation from a word, and reduces it to lower case.
@@ -82,7 +84,7 @@ def clean_word(word: str) -> str:
     """
     if word == "":
         return ""
-    if word[0].isalnum(): #checks if all the characters in a string are letters or numbers
+    if word[0].isalnum():  # checks if all the characters in a string are letters or numbers
         return word[0].lower() + clean_word(word[1:])
     else:
         return clean_word(word[1:])
